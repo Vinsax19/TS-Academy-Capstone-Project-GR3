@@ -24,6 +24,32 @@ export default function IntroSection() {
             Planetary science goes beyond images. Comparing <span className="text-blue-600 font-bold">mass, diameter, gravity</span>, and <span className="text-blue-600 font-bold">density</span>, we gain insight into how planets form, behave, and interact within the solar system.
           </p>
 
+        <div className="relative group rounded-2xl overflow-hidden shadow-2xl bg-black aspect-video max-w-4xl mx-auto border-8 border-gray-100">
+            {/* HTML5 Video as per requirement 4 */}
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105"
+            >
+              <source
+                src="https://www.pexels.com/download/video/36028182/"
+                type="video/mp4"
+              />
+            </video>
+            
+            {/* Overlay Play Icon Decoration */}
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+              <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/30 transform group-hover:scale-110 transition-all duration-500">
+                <Play className="fill-current w-6 h-6 ml-1" />
+              </div>
+            </div>
+
+            {/* Scanning Effect Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-blue-500/10 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 opacity-20 pointer-events-none" style={{ backgroundImage: 'linear-gradient(transparent 95%, rgba(255,255,255,0.1) 100%)', backgroundSize: '100% 4px' }} />
+          </div>
         </motion.div>
       </div>
     </section>
