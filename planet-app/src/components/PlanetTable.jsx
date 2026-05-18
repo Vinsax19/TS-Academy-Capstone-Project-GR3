@@ -1,149 +1,198 @@
-const TABLE_DATA = [
-  {
-    group: "Terrestrial Planets",
-    subgroup: null,
-    planets: [
-      { name: "Mercury", mass: "0.330",  diameter: "4,878",   density: "5,427", gravity: "3.7" },
-      { name: "Venus",   mass: "4.870",  diameter: "12,104",  density: "5,243", gravity: "8.9" },
-      { name: "Earth",   mass: "5.970",  diameter: "12,756",  density: "5,514", gravity: "9.8" },
-      { name: "Mars",    mass: "0.642",  diameter: "6,792",   density: "3,933", gravity: "3.7" },
-    ],
-  },
-  {
-    group: "Jovian Planets",
-    subgroup: "Gas Giants",
-    planets: [
-      { name: "Jupiter", mass: "1898", diameter: "142,984", density: "1,326", gravity: "23.1" },
-      { name: "Saturn",  mass: "568",  diameter: "120,536", density: "687",   gravity: "9.0" },
-    ],
-  },
-  {
-    group: null,
-    subgroup: "Ice Giants",
-    planets: [
-      { name: "Uranus",  mass: "86.8", diameter: "51,118", density: "1,271", gravity: "8.7" },
-      { name: "Neptune", mass: "102",  diameter: "49,528", density: "1,638", gravity: "11.0" },
-    ],
-  },
-  {
-    group: "Dwarf Planets",
-    subgroup: null,
-    planets: [
-      { name: "Pluto", mass: "0.0130", diameter: "2,376", density: "2,095", gravity: "0.7" },
-    ],
-  },
-];
+import React from "react";
 
-export default function PlanetTable() {
-  const rows = [];
+const PlanetaryFacts = () => {
+  const planetaryData = [
+    {
+      category: "Terrestrial Planets",
+      planets: ["Mercury", "Venus", "Earth", "Mars"],
+    },
+    {
+      category: "Jovian Planets",
+      subCategories: [
+        {
+          label: "Gas Giants",
+          planets: ["Jupiter", "Saturn"],
+        },
+        {
+          label: "Ice Giants",
+          planets: ["Uranus", "Neptune"],
+        },
+      ],
+    },
+    {
+      category: "Dwarf Planets",
+      planets: ["Pluto"],
+    },
+  ];
 
-  TABLE_DATA.forEach((group) => {
-    group.planets.forEach((planet, pi) => {
-      const isFirst = pi === 0;
-      rows.push(
-        <tr key={planet.name} style={rows.length % 2 === 0 ? styles.trOdd : styles.trEven}>
-          {group.group && isFirst && (
-            <td rowSpan={group.planets.length} style={styles.tdGroup}>
-              {group.group}
-            </td>
-          )}
-          {group.subgroup && isFirst && (
-            <td rowSpan={group.planets.length} style={styles.tdSubgroup}>
-              {group.subgroup}
-            </td>
-          )}
-          {!group.group && !group.subgroup && isFirst && <td style={styles.tdEmpty} />}
-          <td style={styles.td}>{planet.name}</td>
-          <td style={styles.td}>{planet.mass}</td>
-          <td style={styles.td}>{planet.diameter}</td>
-          <td style={styles.td}>{planet.density}</td>
-          <td style={styles.td}>{planet.gravity}</td>
-        </tr>
-      );
-    });
-  });
+  const dataValues = {
+    mass: "0.330",
+    diameter: "4,878",
+    density: "5427",
+    gravity: "3.7",
+  };
 
   return (
-    <section style={styles.section}>
-      <h2 style={styles.title}>Planetary Facts at a Glance</h2>
-      <p style={styles.subtitle}>
-        Below is a comparative table of major planets in our solar system. The data highlights
-        key physical properties used by astronomers and researchers worldwide.
-      </p>
-      <p style={styles.caption}>Data about the planets of our solar system (Planetary facts taken from NASA)</p>
-      <div style={styles.tableWrap}>
-        <table style={styles.table}>
-          <thead>
-            <tr>
-              <th colSpan={2} style={styles.th}></th>
-              <th style={styles.th}>Name</th>
-              <th style={styles.th}>Mass (10²⁴kg)</th>
-              <th style={styles.th}>Diameter (km)</th>
-              <th style={styles.th}>Density (kg/m³)</th>
-              <th style={styles.th}>Gravity (m/s²)</th>
-            </tr>
-          </thead>
-          <tbody>{rows}</tbody>
-        </table>
-      </div>
-    </section>
-  );
-}
+    <>
+      <div className="container">
+        <h1 className="title">Planetary Facts at a Glance</h1>
 
-const styles = {
-  section: { padding: "70px 60px" },
-  title: {
-    fontSize: 26,
-    fontWeight: 700,
-    color: "#0d47a1",
-    textAlign: "center",
-    margin: "0 0 10px",
-  },
-  subtitle: {
-    fontSize: 14,
-    color: "#555",
-    textAlign: "center",
-    maxWidth: 560,
-    margin: "0 auto 16px",
-    lineHeight: 1.7,
-  },
-  caption: { fontSize: 13, color: "#888", marginBottom: 14 },
-  tableWrap: { overflowX: "auto" },
-  table: { width: "100%", borderCollapse: "collapse", fontSize: 13 },
-  th: {
-    background: "#1565c0",
-    color: "#fff",
-    padding: "10px 14px",
-    textAlign: "left",
-    fontWeight: 600,
-    fontSize: 13,
-  },
-  tdGroup: {
-    background: "#1565c0",
-    color: "#fff",
-    padding: "8px 14px",
-    fontWeight: 600,
-    fontSize: 12,
-    textAlign: "center",
-    verticalAlign: "middle",
-    borderRight: "1px solid rgba(255,255,255,0.2)",
-  },
-  tdSubgroup: {
-    background: "#e3ecfa",
-    color: "#1565c0",
-    padding: "8px 14px",
-    fontWeight: 600,
-    fontSize: 12,
-    textAlign: "center",
-    verticalAlign: "middle",
-    borderRight: "1px solid #c5d5ea",
-  },
-  tdEmpty: { padding: 0 },
-  td: {
-    padding: "9px 14px",
-    borderBottom: "1px solid #e8ecf4",
-    color: "#333",
-  },
-  trOdd: { background: "#fff" },
-  trEven: { background: "#f8faff" },
+        <p className="subtitle">
+          Below is a comparative table of major planets in our solar system. The
+          data highlights key physical properties used by astronomers and
+          researchers worldwide.
+        </p>
+
+        <h3 className="table-heading">
+          Data about the planets of our solar system (Planetary facts taken from NASA)
+        </h3>
+
+        <div className="table-wrapper">
+          <table className="planet-table">
+            <thead>
+              <tr>
+                <th colSpan="2"></th>
+                <th>Name</th>
+                <th>Mass (10 24kg)</th>
+                <th>Diameter (km)</th>
+                <th>Density (kg/m3)</th>
+                <th>Gravity (m/s2)</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {planetaryData[0].planets.map((planet, index) => (
+                <tr key={planet}>
+                  {index === 0 && (
+                    <td className="category" rowSpan={4} colSpan="2">
+                      {planetaryData[0].category}
+                    </td>
+                  )}
+                  <td>{planet}</td>
+                  <td>{dataValues.mass}</td>
+                  <td>{dataValues.diameter}</td>
+                  <td>{dataValues.density}</td>
+                  <td>{dataValues.gravity}</td>
+                </tr>
+              ))}
+
+              {planetaryData[1].subCategories.map((group, groupIndex) =>
+                group.planets.map((planet, index) => (
+                  <tr key={planet}>
+                    {groupIndex === 0 && index === 0 && (
+                      <td className="category" rowSpan="4">
+                        {planetaryData[1].category}
+                      </td>
+                    )}
+
+                    {index === 0 && (
+                      <td className="subcategory" rowSpan={group.planets.length}>
+                        {group.label}
+                      </td>
+                    )}
+
+                    <td>{planet}</td>
+                    <td>{dataValues.mass}</td>
+                    <td>{dataValues.diameter}</td>
+                    <td>{dataValues.density}</td>
+                    <td>{dataValues.gravity}</td>
+                  </tr>
+                ))
+              )}
+
+              <tr>
+                <td className="category" colSpan="2">
+                  {planetaryData[2].category}
+                </td>
+                <td>{planetaryData[2].planets[0]}</td>
+                <td>{dataValues.mass}</td>
+                <td>{dataValues.diameter}</td>
+                <td>{dataValues.density}</td>
+                <td>{dataValues.gravity}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      {/* STYLE AT BOTTOM */}
+      <style>{`
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        body {
+          background: #f3f4f6;
+          font-family: Arial, sans-serif;
+        }
+
+        .container {
+          max-width: 1200px;
+          margin: 40px auto;
+          padding: 20px;
+        }
+
+        .title {
+          color: #1d4ed8;
+          font-size: 42px;
+          margin-bottom: 16px;
+          font-weight: 700;
+        }
+
+        .subtitle {
+          color: #4b5563;
+          font-size: 18px;
+          line-height: 1.7;
+          margin-bottom: 40px;
+        }
+
+        .table-heading {
+          font-size: 20px;
+          margin-bottom: 20px;
+          color: #1f2937;
+        }
+
+        .table-wrapper {
+          overflow-x: auto;
+        }
+
+        .planet-table {
+          width: 100%;
+          border-collapse: collapse;
+          background: white;
+        }
+
+        .planet-table thead th {
+          background: #1d4ed8;
+          color: white;
+          padding: 18px;
+          text-align: center;
+        }
+
+        .planet-table td {
+          padding: 20px;
+          text-align: center;
+          border: 1px solid #e5e7eb;
+          background: #f9fafb;
+        }
+
+        .category,
+        .subcategory {
+          background: #dbeafe !important;
+          font-weight: 700;
+        }
+
+        /* 🔥 HIDE EVERYTHING ON MOBILE */
+        @media (max-width: 768px) {
+          .container {
+            display: none;
+          }
+        }
+      `}</style>
+    </>
+  );
 };
+
+export default PlanetaryFacts;
