@@ -3,13 +3,23 @@ export default function Footer() {
     <footer style={styles.footer}>
       <div style={styles.top}>
         <div>
-          <p style={styles.aboutTitle}>About</p>
-          <p style={styles.aboutText}>First name of group members</p>
+          <p style={styles.aboutTitle}>Software Development Group3 Capstone Project</p>
+          <span>Names of Project Contributors.</span>
+          <ul style={styles.aboutText}>
+            <li>Ifeanyi</li>
+            <li>Prince</li>
+            <li>Emmanuel</li>
+            <li>Desmond</li>
+            <li>Victor</li>
+            <li>Alvin</li>
+            <li>Thompson</li>
+            <li>Marvellous</li>
+          </ul>
         </div>
-      </div>
+      </div> 
       <div style={styles.bottom}>
-        <span>©2026 Design by Amaka & Ifeoma R. Built by Greatname. All rights reserved</span>
-        <span style={styles.brand}>TSAcademy</span>
+        <span>©2026 Design by Group 3. All rights reserved</span>
+        <a style={styles.brand} href="https://tsacademyonline.com/">TSAcadem</a>
       </div>
     </footer>
   );
