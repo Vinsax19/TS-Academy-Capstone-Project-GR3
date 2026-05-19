@@ -5,6 +5,7 @@ import PlanetGrid from "./components/PlanetGrid";
 import PlanetTable from "./components/PlanetTable";
 import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
+import './index.css'
 
 export default function App() {
   return (
