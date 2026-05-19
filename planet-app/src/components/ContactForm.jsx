@@ -1,15 +1,27 @@
 import React, { useState } from "react";
 
 function ContactForm() {
-  const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    city: "",
-    phone: "",
-    message: "",
-    contactMethod: "",
-    heardFrom: []
+  const [formData, setFormData] =  useState(() => {
+    // Get saved data from localStorage
+    const savedData = localStorage.getItem("contactForm");
+
+    return savedData
+      ? JSON.parse(savedData)
+      : {
+          fullName: "",
+          email: "",
+          city: "",
+          phone: "",
+          message: "",
+          contactMethod: "",
+          heardFrom: []       
+        };
   });
+
+  localStorage.setItem("contactForm", JSON.stringify(formData));
+  
+
+
 
   const cities = ["New York", "London", "Paris", "Tokyo"]; // Example cities
 
@@ -29,9 +41,19 @@ function ContactForm() {
 
   const handleSubmit = async (e) => {
   e.preventDefault();
+  
+  setFormData({
+    fullName: "",
+    email: "",
+    city: "",
+    phone: "",
+    message: "",
+    contactMethod: "",
+    heardFrom: []
+  })
 
   try {
-    const response = await fetch("http://localhost:5000/contact", {
+    const response = await fetch("https://whitebricks.com/tsacademy.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -44,11 +66,16 @@ function ContactForm() {
     console.log(data);
 
     alert("Form submitted successfully!");
+
+      
   } catch (error) {
     console.error(error);
     alert("Something went wrong");
   }
 };
+
+
+
 
   return (
     <div className="form-container">
