@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 function ContactForm() {
   const [formData, setFormData] =  useState(() => {
     // Get saved data from localStorage
@@ -78,8 +77,8 @@ function ContactForm() {
 
 
   return (
-    <div className="form-container">
-      <h1>Have Questions About Planetary Science?</h1>
+    <div className="bg-white-900 content-center flex ">
+      <h1 className="bg-blue-900">Have Questions About Planetary Science?</h1>
       <p className="form-description">
         Interested in learning more about space, astronomy, or how planetary data is collected and analyzed?
         Reach out and we'll get back to you.
