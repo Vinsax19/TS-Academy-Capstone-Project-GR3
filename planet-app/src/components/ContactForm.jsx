@@ -17,8 +17,10 @@ function ContactForm() {
         };
   });
 
-  localStorage.setItem("contactForm", JSON.stringify(formData));
   
+  useEffect(() => {
+    localStorage.setItem("contactForm", JSON.stringify(formData));
+  }, [formData]);
 
 
 
