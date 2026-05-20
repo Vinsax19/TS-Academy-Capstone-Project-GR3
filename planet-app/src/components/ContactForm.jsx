@@ -18,9 +18,7 @@ function ContactForm() {
   });
 
   
-  useEffect(() => {
-    localStorage.setItem("contactForm", JSON.stringify(formData));
-  }, [formData]);
+  localStorage.setItem("contactForm", JSON.stringify(formData));
 
 
 
@@ -40,57 +38,69 @@ function ContactForm() {
     }
   };
 
-  const handleSubmit = async (e) => {
+
+
+const handleSubmit = async (e) => {
   e.preventDefault();
-  
-  setFormData({
-    fullName: "",
-    email: "",
-    city: "",
-    phone: "",
-    message: "",
-    contactMethod: "",
-    heardFrom: []
-  })
+  console.log("Submitting form:", formData); // Debugging log
+
+  // Convert formData to URL-encoded string
+  const formBody = new URLSearchParams();
+  formBody.append("fullName", formData.fullName);
+  formBody.append("email", formData.email);
+  formBody.append("city", formData.city);
+  formBody.append("phone", formData.phone);
+  formBody.append("message", formData.message);
+  formBody.append("contactMethod", formData.contactMethod);
+  formBody.append("heardFrom", formData.heardFrom.join(", ")); // convert array to comma-separated string
 
   try {
     const response = await fetch("https://whitebricks.com/tsacademy.php", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
       },
-      body: JSON.stringify(formData),
+      body: formBody.toString(),
     });
 
-    const data = await response.json();
-
-    console.log(data);
+    const text = await response.text(); // use text instead of JSON in case PHP doesn't return JSON
+    console.log("Server response:", text);
 
     alert("Form submitted successfully!");
 
-      
+    // Reset form
+    setFormData({
+      fullName: "",
+      email: "",
+      city: "",
+      phone: "",
+      message: "",
+      contactMethod: "",
+      heardFrom: [],
+    });
+
+    // Clear localStorage
+    localStorage.removeItem("contactForm");
   } catch (error) {
-    console.error(error);
-    alert("Something went wrong");
+    console.error("Error submitting form:", error);
+    alert("Something went wrong. Please try again.");
   }
 };
 
-
-
-
   return (
-    <div className="bg-white-900 content-center flex ">
-      <h1 className="bg-blue-900">Have Questions About Planetary Science?</h1>
-      <p className="form-description">
+    <div style={Styles.section}>
+      <h1 style={Styles.title}>Have Questions About Planetary Science?</h1>
+      <p style={Styles.text}>
         Interested in learning more about space, astronomy, or how planetary data is collected and analyzed?
         Reach out and we'll get back to you.
       </p>
 
-      <form onSubmit={handleSubmit} className="planetary-form">
-        <div className="form-row">
-          <div className="form-group">
-            <label>Full Name*</label>
+      <form onSubmit={handleSubmit} >
+        <div style={Styles.grid}>
+            <div>
+              <label style={Styles.label}>Full Name<span style={Styles.span}>*</span></label>
             <input
+              style={Styles.input}
               type="text"
               name="fullName"
               placeholder="full name"
@@ -98,11 +108,14 @@ function ContactForm() {
               onChange={handleChange}
               required
             />
-          </div>
+            </div>
 
-          <div className="form-group">
-            <label>Email*</label>
+
+          
+            <div>
+              <label style={Styles.label}>Email<span style={Styles.span}>*</span></label>
             <input
+            style={Styles.input}
               type="email"
               name="email"
               placeholder="example@example.com"
@@ -110,23 +123,26 @@ function ContactForm() {
               onChange={handleChange}
               required
             />
-          </div>
-        </div>
+            </div>
+          
 
-        <div className="form-row">
-          <div className="form-group">
-            <label>City*</label>
-            <select name="city" value={formData.city} onChange={handleChange} required>
+        
+            <div>
+              <label style={Styles.label}>City<span style={Styles.span}>*</span></label>
+            <select style={Styles.input} name="city" value={formData.city} onChange={handleChange} required>
               <option value="">Choose city</option>
               {cities.map((city) => (
                 <option key={city} value={city}>{city}</option>
               ))}
             </select>
-          </div>
+            </div>
+  
 
-          <div className="form-group">
-            <label>Phone Number*</label>
+          
+            <div>
+              <label style={Styles.label}>Phone Number<span style={Styles.span}>*</span></label>
             <input
+            style={Styles.input}
               type="tel"
               name="phone"
               placeholder="Please enter a valid phone number"
@@ -134,23 +150,26 @@ function ContactForm() {
               onChange={handleChange}
               required
             />
-          </div>
-        </div>
+            </div>
+          
 
-        <div className="form-group">
-          <label>Message*</label>
+          <div>
+            <label style={Styles.label}>Message<span style={Styles.span}>*</span></label>
           <textarea
+          style={Styles.textarea}
             name="message"
             placeholder="Enter your message"
             value={formData.message}
             onChange={handleChange}
             required
           />
-        </div>
-
-        <div className="form-group radio-group">
-          <label>How should we contact you?</label>
-          <div>
+          <p style={Styles.capture}>100 characters</p>
+          </div>
+        
+        
+          <div style={Styles.pad}>
+              <label style={Styles.labels}>How should we contact you?</label>
+            <div style={Styles.radio}>
             <label>
               <input
                 type="radio"
@@ -169,6 +188,7 @@ function ContactForm() {
                 onChange={handleChange}
               /> Email
             </label>
+            
             <label>
               <input
                 type="radio"
@@ -178,12 +198,10 @@ function ContactForm() {
                 onChange={handleChange}
               /> Both
             </label>
-          </div>
-        </div>
-
-        <div className="form-group checkbox-group">
-          <label>How did you hear about us?</label>
-          <div>
+            </div>
+          
+              <label style={Styles.padding}>How did you hear about us?</label>
+            <div style={Styles.radio}>
             <label>
               <input
                 type="checkbox"
@@ -204,6 +222,7 @@ function ContactForm() {
             </label>
             <label>
               <input
+              style={Styles.radio}
                 type="checkbox"
                 name="heardFrom"
                 value="Other"
@@ -211,13 +230,115 @@ function ContactForm() {
                 onChange={handleChange}
               /> Other
             </label>
-          </div>
-        </div>
+              
+              </div>
+          </div>          
 
-        <button type="submit" className="submit-btn">Submit &gt;</button>
+          </div>
+        <button type="submit" className="submit-btn" style={Styles.Button}>Submit &gt;</button>
       </form>
+
     </div>
   );
 }
 
+const Styles = {
+
+    section: {
+    padding: "70px 60px",
+    background: "#f0f4ff",
+    },
+    title: {
+    fontSize: 26,
+    fontWeight: 700,
+    color: "#0d47a1",
+    margin: "10px 0px",
+    textAlign: window.innerWidth >= 700 ? "start" : "center",
+    },
+    text: {
+      letterSpacing: 0.5,
+      lineHeight: 1.5,
+      color: "black",
+      margin: "0 0 30px 0",
+      width: window.innerWidth >= 700 ? "800px" : "100%",
+      textAlign: window.innerWidth >= 700 ? "start" : "center",
+    },
+
+    label: {
+      padding: "0",
+      fontSize: "15px",
+      fontWeight: 700,
+      display: "block"
+    },
+    span: {
+      color: "red"
+    },
+    input: {
+      border: "1px solid #cdd5e0",
+      borderRadius: 6,
+      padding: "10px 12px",
+      fontSize: 13,
+      outline: "none",
+      width: "100%",
+      boxSizing: "border-box",
+      color: "#333",
+    },
+    textarea: {
+      border: "1px solid #cdd5e0",
+      borderRadius: 6,
+      padding: "10px 12px",
+      fontSize: 13,
+      outline: "none",
+      width: "100%",
+      height: "80%",
+      boxSizing: "border-box",
+      color: "#333",
+    },
+    grid: {
+      display: "grid",
+      gridTemplateColumns: window.innerWidth >= 700 ? "repeat(2, minmax(400px, 1fr))" : "1fr",
+      gap: 20,
+      marginBottom: 20,
+  },
+  labels: {
+      fontSize: "15px",
+      fontWeight: 700,
+      display: "block",
+      lineHeight: "30px"
+    },
+    radio: {
+      display: "flex",
+      justifyContent: "space-between",
+      alignContent: "center",
+      display: window.innerWidth >= 500 ? "block" : "none",
+    },
+    pad: {
+      paddingTop: "10px",
+    },
+    padding: {
+      paddingTop: "40px",
+      fontSize: "15px",
+      fontWeight: 700,
+      display: "block",
+      lineHeight: "30px",
+      display: window.innerWidth >= 500 ? "block" : "none",
+    },
+    
+    capture: {
+      color: "gray",
+      fontSize: "10px"
+    },
+
+    Button: {
+      margin: "30px 0",
+      backgroundColor: "#0d49a1",
+      color: "white",
+      fontSize: "16px",
+      padding: "5px 70px",
+      borderRadius: "6px",
+      cursor: "pointer"
+    }
+    
+
+}
 export default ContactForm;

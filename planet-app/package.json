@@ -1,8 +1,12 @@
 {
   "name": "planet-app",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
+  "description": "Official Repo for Group 3 Capstone Project",
+  "license": "ISC",
+  "author": "",
   "type": "module",
+  "main": "vite.config.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
