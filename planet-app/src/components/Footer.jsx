@@ -19,7 +19,7 @@ export default function Footer() {
       </div> 
       <div style={styles.bottom}>
         <span>©2026 Design by Group 3. All rights reserved</span>
-        <a style={styles.brand} href="https://tsacademyonline.com/">TSAcadem</a>
+        <a style={styles.brand} href="https://tsacademyonline.com/">TSAcademy</a>
       </div>
     </footer>
   );
