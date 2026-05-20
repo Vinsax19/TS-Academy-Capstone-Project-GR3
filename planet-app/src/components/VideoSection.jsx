@@ -9,7 +9,7 @@ import { Play } from 'lucide-react';
 
 export default function VideoSection() {
   return (
-    <section className="py-24! px-8! bg-white text-black text-center relative">
+    <section className="py-24! md:py-[70px]! lg:py-24! px-8! flex justify-center items-center bg-white text-black text-center relative">
       <div className="max-w-5xl mx-auto">
         <motion.div
            initial={{ opacity: 0, y: 30 }}
@@ -29,13 +29,13 @@ export default function VideoSection() {
 
             <div className="md:w-1/3 lg:w-full md:h-96 lg:h-auto md:flex lg:block items-center justify-center">
               <div className="w-full h-[15rem] md:h-64 lg:h-full relative group rounded-2xl overflow-hidden aspect-video">
-                {/* HTML5 Video as per requirement 4 */}
+                
                 <video
                   autoPlay
                   muted
                   loop
                   playsInline
-                  className="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-100"
                 >
                   <source
                     src="https://www.pexels.com/download/video/36028182/"
