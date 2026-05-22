@@ -47,6 +47,7 @@ body {
     grid-template-columns: repeat(2, 1fr); /* Drops nicely to 2 columns on tablets */
   
 }
+}
 
 /* 3. Lower Tier: Mobile view (Screens 700px and smaller) */
 @media (max-width: 700px) {
