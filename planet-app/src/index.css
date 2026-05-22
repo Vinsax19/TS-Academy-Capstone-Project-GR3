@@ -44,8 +44,8 @@ body {
 /* 2. Middle Tier: Tablet view (Screens between 701px and 1024px wide) */
 @media (max-width: 1024px) {
   .grid {
-    grid-template-columns: repeat(3, 1fr); /* Drops nicely to 3 columns on tablets */
-  }
+    grid-template-columns: repeat(2, 1fr); /* Drops nicely to 2 columns on tablets */
+  
 }
 
 /* 3. Lower Tier: Mobile view (Screens 700px and smaller) */
@@ -55,7 +55,7 @@ body {
   }
 
   .grid {
-    grid-template-columns: repeat(2, 1fr); /* Locks into 2 columns on phones */
+    grid-template-columns: 1fr; /* Locks into 1 columns on phones */
     gap: 12px;
   }
 
