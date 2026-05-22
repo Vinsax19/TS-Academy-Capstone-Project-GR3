@@ -17,7 +17,7 @@ function PlanetImage({ idx }) {
   return (
     <div style={{
       ...styles.imgBox,
-      background: `radial-gradient(circle at 35% 35%, ${c1}, ${c2})`,
+      background: `radial-gradient(circle at 35% 35%, ${c1}, ${c2})`
     }}>
       <div style={styles.highlight} />
       <div style={styles.shadow} />
@@ -26,9 +26,32 @@ function PlanetImage({ idx }) {
 }
 
 export default function PlanetGrid() {
+  // 1. Dynamic check: true if screen is mobile/tablet, false if desktop
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
+  // 2. State hooks (using the clean destructuring from your file)
   const [planets, setPlanets] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  // 3. Fetching logic
+  useEffect(() => {
+    fetch('/Planets.json')
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Failed to fetch planetary data');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setPlanets(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setLoading(false);
+      });
+  }, []);
 
   // 2. Fetch API implementation
   useEffect(() => {
@@ -63,10 +86,9 @@ export default function PlanetGrid() {
       {error && <div style={{ color: 'red', textAlign: 'center' }}>Error: {error}</div>}
 
       {!loading && !error && (
-        <div style={styles.grid}>
+        <div className="grid">
           {planets.map((planet, idx) => (
             <figure key={planet.name || idx} style={styles.card}>
-              {/* REPLACED <PlanetImage idx={idx} /> WITH A REAL IMAGE TAG */}
               <img 
                 src={planet.image} 
                 alt={planet.name} 
@@ -79,7 +101,7 @@ export default function PlanetGrid() {
             </figure>
           ))}
         </div>
-        
+
       )}
     </section>
   );
@@ -107,8 +129,8 @@ const styles = {
   },
   grid: {
     display: "grid",
-    gridTemplateColumns: "repeat(3, 1fr)",
-    gap: 20,
+    gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
+    gap: 15, 
   },
   card: {
     background: "#fff",
@@ -142,8 +164,8 @@ const styles = {
     background: "rgba(0,0,0,0.15)",
   },
   info: {
-    padding: "10px 14px 14px",
-    textAlign: "center",
+    padding: "10px 8px 14px",
+    textAlign: "center", 
   },
   name: { 
     fontSize: 15, 
