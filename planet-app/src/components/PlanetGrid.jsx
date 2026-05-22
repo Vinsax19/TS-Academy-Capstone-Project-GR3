@@ -66,7 +66,12 @@ export default function PlanetGrid() {
         <div style={styles.grid}>
           {planets.map((planet, idx) => (
             <figure key={planet.name || idx} style={styles.card}>
-              <PlanetImage idx={idx} />
+              {/* REPLACED <PlanetImage idx={idx} /> WITH A REAL IMAGE TAG */}
+              <img 
+                src={planet.image} 
+                alt={planet.name} 
+                style={{ width: '100%', height: 160, objectFit: 'cover' }} 
+              />
               <figcaption style={styles.info}>
                 <h3 style={styles.name}>{planet.name}</h3>
                 <p style={styles.distance}>{planet.distance}</p>
@@ -74,6 +79,7 @@ export default function PlanetGrid() {
             </figure>
           ))}
         </div>
+        
       )}
     </section>
   );
