@@ -22,7 +22,7 @@ This project recreates the provided mockup while implementing dynamic data fetch
 | Member 1 | https://github.com/MarvisDeals |
 | Member 2 | [https://github.com/ifyyoyo] |
 | Member 3 | https://github.com/ogheneroprince |
-| Member 4 | [GitHub Link] |
+| Member 4 | https://github.com/Vinsax19|
 | Member 5 | [GitHub Link] |
 | Member 6 | [GitHub Link] |
 
@@ -149,15 +149,15 @@ The project followed a collaborative GitHub workflow:
 
 | Feature / Component | Contributor(s) |
 |---------------------|----------------|
-| Header Component | [Name] |
-| Hero Section | [Name] |
+| Header Component | Onichabor Alvin |
+| Hero Section | Onichabor Alvin |
 | Planet Fetch Logic | [Name] |
 | Planet Cards | ONYEDIKACHI MARVELLOUS |
 | Contact Form | OGHENERO PRINCE |
 | Footer Section | [Ifeanyi osirike] |
 | Planet Table | [Ifeanyi osirike] |
 | Responsive Design | [Group contribution] |
-| Deployment | [Name] |
+| Deployment | Onichabor Alvin |
 
 ---
 
