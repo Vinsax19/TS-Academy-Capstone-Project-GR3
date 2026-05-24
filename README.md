@@ -87,6 +87,10 @@ src/
 ├── main.jsx
 └── index.css
 
+
+
+
+
 # 🌌 Space Explorer Capstone Project
 
 A responsive React web application built as part of the TS Academy Capstone Project.
