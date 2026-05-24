@@ -87,7 +87,7 @@ src/
 ├── main.jsx
 └── index.css
 
-🌍 API Integration
+#🌍 API Integration
 The application fetches planet data from the provided API and displays:
 * Planet Name
 * Planet Name
