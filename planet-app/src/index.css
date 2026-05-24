@@ -32,17 +32,19 @@ body {
   color: #0f172a;
 }
 
+/* 1. Default Desktop View (Large Screens) */
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 1. Default Desktop View: 4 Columns */
+  grid-template-columns: repeat(4, minmax(0, 1fr)); 
   gap: 20px;
   margin-bottom: 20px;
 }
 
-/* 2. Middle Tier: Tablet view (Screens between 701px and 1024px wide) */
+/* 2. Middle Tier: Tablet view (Screens 1024px and smaller) */
 @media (max-width: 1024px) {
   .grid {
-    grid-template-columns: repeat(3, 1fr); /* Drops nicely to 3 columns on tablets */
+    grid-template-columns: repeat(3, minmax(0, 1fr)); 
+    gap: 16px;
   }
 }
 
@@ -53,7 +55,7 @@ body {
   }
 
   .grid {
-    grid-template-columns: repeat(2, 1fr); /* Locks into 2 columns on phones */
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* Strictly forces 2 columns on mobile */
     gap: 12px;
   }
 
