@@ -90,10 +90,13 @@ src/
 🌍 API Integration
 
 The application fetches planet data from the provided API and displays:
-
+* Planet Name
 * Planet Name
 * Distance from the Sun
 * Planet Image
+
+
+
 
 📱 Responsive Design
 The project is fully responsive and optimized for:
