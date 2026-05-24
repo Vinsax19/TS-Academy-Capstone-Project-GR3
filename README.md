@@ -23,6 +23,8 @@ This project recreates the provided mockup while implementing dynamic data fetch
 | Member 2 | [https://github.com/ifyyoyo] |
 | Member 3 | https://github.com/ogheneroprince |
 | Member 4 | [GitHub Link] |
+| Member 5 | [GitHub Link] |
+| Member 6 | [GitHub Link] |
 
 ---
 
@@ -153,6 +155,7 @@ The project followed a collaborative GitHub workflow:
 | Planet Cards | ONYEDIKACHI MARVELLOUS |
 | Contact Form | OGHENERO PRINCE |
 | Footer Section | [Ifeanyi osirike] |
+| Planet Table | [Ifeanyi osirike] |
 | Responsive Design | [Group contribution] |
 | Deployment | [Name] |
 
