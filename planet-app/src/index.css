@@ -42,6 +42,11 @@ body {
   gap: 20px;
   margin-bottom: 20px;
 }
+.grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
 
 /* 2. Middle Tier: Tablet view (Screens between 701px and 1024px) */
 @media (min-width: 701px) and (max-width: 1024px) {
@@ -49,6 +54,12 @@ body {
     grid-template-columns: repeat(3, minmax(0, 1fr)); /* Perfect 3 columns */
     gap: 16px;
   }
+
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
 }
 
 /* 3. Lower Tier: Mobile view (Screens 700px and smaller) */
@@ -61,6 +72,12 @@ body {
     grid-template-columns: repeat(2, minmax(0, 1fr)); 
     gap: 12px;
   }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
 
   .display {
     display: none;
