@@ -19,7 +19,7 @@ This project recreates the provided mockup while implementing dynamic data fetch
 
 | Name | GitHub Profile |
 |---|---|
-| Member 1 | [GitHub Link] |
+| Member 1 | https://github.com/MarvisDeals |
 | Member 2 | [https://github.com/ifyyoyo] |
 | Member 3 | https://github.com/ogheneroprince |
 | Member 4 | [GitHub Link] |
@@ -150,7 +150,7 @@ The project followed a collaborative GitHub workflow:
 | Header Component | [Name] |
 | Hero Section | [Name] |
 | Planet Fetch Logic | [Name] |
-| Planet Cards | [Name] |
+| Planet Cards | ONYEDIKACHI MARVELLOUS |
 | Contact Form | OGHENERO PRINCE |
 | Footer Section | [Ifeanyi osirike] |
 | Responsive Design | [Group contribution] |
