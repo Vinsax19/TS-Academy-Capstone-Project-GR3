@@ -1,4 +1,4 @@
-# 🌌 Space Explorer Capstone Project
+# 🌌Planet Exploration Capstone Project
 
 A responsive React web application built as part of the TS Academy Capstone Project.  
 This project recreates the provided mockup while implementing dynamic data fetching, component-based architecture, responsive layouts, and collaborative Git workflows.
@@ -7,7 +7,7 @@ This project recreates the provided mockup while implementing dynamic data fetch
 
 # 🚀 Live Demo
 
-🔗 Live Site: [Add Deployment Link Here]
+🔗 Live Site: [https://tsacademygr3.netlify.app/]
 
 # 👨‍🚀 Team Name
 
@@ -20,7 +20,7 @@ This project recreates the provided mockup while implementing dynamic data fetch
 | Name | GitHub Profile |
 |---|---|
 | Member 1 | [GitHub Link] |
-| Member 2 | [GitHub Link] |
+| Member 2 | [https://github.com/ifyyoyo] |
 | Member 3 | [GitHub Link] |
 | Member 4 | [GitHub Link] |
 
@@ -86,3 +86,90 @@ src/
 ├── App.jsx
 ├── main.jsx
 └── index.css
+
+🌍 API Integration
+
+The application fetches planet data from the provided API and displays:
+
+Planet Name
+Distance from the Sun
+Planet Image
+📱 Responsive Design
+
+The project is fully responsive and optimized for:
+
+Desktop devices
+Tablets
+Mobile phones
+
+Media queries and flexible layouts were used to achieve responsiveness.
+
+📨 Form Validation
+
+The contact form includes:
+
+Required field validation
+Email validation
+Success message after submission
+
+The project followed a collaborative GitHub workflow:
+Separate branches for features
+Pull Requests for contributions
+PR reviews before merging
+No self-merging of PRs
+
+📌 Team Contributions
+Feature / Component	Contributor(s)
+Header Component	[Name]
+Hero Section	[Name]
+Planet Fetch Logic	[Name]
+Planet Cards	[Name]
+Contact Form	[Name]
+Footer Section	[Ifeanyi Osirike]
+Responsive Design	[Group contribution]
+Deployment	[Name]
+
+⚙️ Installation & Setup
+Clone the Repository
+git clone https://github.com/your-username/repository-name.git
+Navigate into the Project Folder
+cd repository-name
+Install Dependencies
+npm install
+Start Development Server
+npm run dev
+🚀 Deployment
+
+The application is deployed using:
+Netlify
+
+
+Through this project, we gained experience with:
+
+React component architecture
+API integration
+Responsive web development
+Team collaboration
+GitHub workflows
+Project deployment
+
+🔗 Useful Links
+TS Academy: https://tsacademyonline.com/
+React Documentation: https://react.dev/
+Vite Documentation: https://vitejs.dev/
+
+📄 License
+
+This project was created for educational purposes as part of the TS Academy Capstone Project.
+
+💫 Acknowledgements
+
+Special thanks to:
+
+TS Academy instructors
+Team members
+Peer collaborators
+
+
+
+
