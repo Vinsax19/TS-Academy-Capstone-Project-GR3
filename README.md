@@ -88,22 +88,6 @@ src/
 └── index.css
 ```
 
-
-
-
-# 🌌 Space Explorer Capstone Project
-
-A responsive React web application built as part of the TS Academy Capstone Project.
-
-This project recreates the provided mockup while implementing:
-
-- Dynamic data fetching
-- Component-based architecture
-- Responsive layouts
-- Collaborative Git workflows
-
----
-
 # 🌍 API Integration
 
 The application fetches planet data from the provided API and displays:
@@ -168,8 +152,8 @@ The project followed a collaborative GitHub workflow:
 | Planet Fetch Logic | [Name] |
 | Planet Cards | [Name] |
 | Contact Form | [Name] |
-| Footer Section | [Name] |
-| Responsive Design | [Name] |
+| Footer Section | [Ifeanyi osirike] |
+| Responsive Design | [Group contribution] |
 | Deployment | [Name] |
 
 ---
@@ -179,13 +163,13 @@ The project followed a collaborative GitHub workflow:
 ## Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/repository-name.git
+git https://github.com/Vinsax19/TS-Academy-Capstone-Project-GR3.git
 ```
 
 ## Navigate into the Project Folder
 
 ```bash
-cd repository-name
+cd TS-Academy-Capstone-Project-GR3
 ```
 
 ## Install Dependencies
