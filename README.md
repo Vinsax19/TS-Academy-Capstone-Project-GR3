@@ -87,9 +87,159 @@ src/
 ├── main.jsx
 └── index.css
 
+# 🌌 Space Explorer Capstone Project
+
+A responsive React web application built as part of the TS Academy Capstone Project.
+
+This project recreates the provided mockup while implementing:
+
+- Dynamic data fetching
+- Component-based architecture
+- Responsive layouts
+- Collaborative Git workflows
+
+---
+
 # 🌍 API Integration
+
 The application fetches planet data from the provided API and displays:
-* Planet Name
-* Planet Name
-* Distance from the Sun
-* Planet Image
+
+- Planet Name
+- Distance from the Sun
+- Planet Image
+
+---
+
+# 📱 Responsive Design
+
+The project is fully responsive and optimized for:
+
+- Desktop devices
+- Tablets
+- Mobile phones
+
+Media queries and flexible layouts were used to achieve responsiveness.
+
+---
+
+# 📨 Form Validation
+
+The contact form includes:
+
+- Required field validation
+- Email validation
+- Success message after submission
+
+---
+
+# 🎥 Video Requirements
+
+The project uses the HTML `<video>` element instead of an iframe.
+
+## Features
+
+- Autoplay
+- Muted
+- Loop enabled
+
+---
+
+# 🔀 Git Workflow
+
+The project followed a collaborative GitHub workflow:
+
+- Separate branches for features
+- Pull Requests for contributions
+- PR reviews before merging
+- No self-merging of PRs
+
+---
+
+# 📌 Team Contributions
+
+| Feature / Component | Contributor(s) |
+|---------------------|----------------|
+| Header Component | [Name] |
+| Hero Section | [Name] |
+| Planet Fetch Logic | [Name] |
+| Planet Cards | [Name] |
+| Contact Form | [Name] |
+| Footer Section | [Name] |
+| Responsive Design | [Name] |
+| Deployment | [Name] |
+
+---
+
+# ⚙️ Installation & Setup
+
+## Clone the Repository
+
+```bash
+git clone https://github.com/your-username/repository-name.git
+```
+
+## Navigate into the Project Folder
+
+```bash
+cd repository-name
+```
+
+## Install Dependencies
+
+```bash
+npm install
+```
+
+## Start Development Server
+
+```bash
+npm run dev
+```
+
+---
+
+# 🚀 Deployment
+
+The application is deployed using:
+
+- Netlify
+- Vercel
+
+---
+
+# 📚 Learning Outcomes
+
+Through this project, we gained experience with:
+
+- React component architecture
+- API integration
+- Responsive web development
+- Team collaboration
+- GitHub workflows
+- Project deployment
+
+---
+
+# 🔗 Useful Links
+
+- TS Academy: https://tsacademyonline.com/
+- React Documentation: https://react.dev/
+- Vite Documentation: https://vitejs.dev/
+
+---
+
+# 📄 License
+
+This project was created for educational purposes as part of the TS Academy Capstone Project.
+
+---
+
+# 💫 Acknowledgements
+
+Special thanks to:
+
+- TS Academy instructors
+- Team members
+- Peer collaborators
+
+---
