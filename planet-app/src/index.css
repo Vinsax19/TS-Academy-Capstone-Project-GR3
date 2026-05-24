@@ -12,6 +12,12 @@
   }
 }
 
+
+:root {
+  color-scheme: light;
+  overflow-x: hidden;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -26,6 +32,7 @@ body {
   font-family: 'Segoe UI', system-ui, sans-serif;
   background: #ffffff;
   color: #0f172a;
+  overflow-x: hidden;
 }
 
 /* 1. Default Desktop View (Large Screens) */
@@ -39,9 +46,9 @@ body {
 /* 2. Middle Tier: Tablet view (Screens 1024px and smaller) */
 @media (max-width: 1024px) {
   .grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr)); 
-    gap: 16px;
-  }
+    grid-template-columns: repeat(2, 1fr); /* Drops nicely to 2 columns on tablets */
+  
+}
 }
 
 /* 3. Lower Tier: Mobile view (Screens 700px and smaller) */
@@ -51,7 +58,7 @@ body {
   }
 
   .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)); 
+    grid-template-columns: 1fr; /* Locks into 1 columns on phones */
     gap: 12px;
   }
 

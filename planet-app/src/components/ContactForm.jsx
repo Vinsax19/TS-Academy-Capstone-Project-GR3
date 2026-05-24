@@ -45,6 +45,19 @@ const handleSubmit = async (e) => {
   e.preventDefault();
   console.log("Submitting form:", formData); // Debugging log
 
+    // Reset form
+    setFormData({
+      fullName: "",
+      email: "",
+      city: "",
+      phone: "",
+      message: "",
+      contactMethod: "",
+      heardFrom: [],
+    });
+
+
+  
   // Convert formData to URL-encoded string
   const formBody = new URLSearchParams();
   formBody.append("fullName", formData.fullName);
@@ -69,16 +82,6 @@ const handleSubmit = async (e) => {
 
     alert("Form submitted successfully!");
 
-    // Reset form
-    setFormData({
-      fullName: "",
-      email: "",
-      city: "",
-      phone: "",
-      message: "",
-      contactMethod: "",
-      heardFrom: [],
-    });
 
     // Clear localStorage
     localStorage.removeItem("contactForm");

@@ -151,16 +151,21 @@ const PlanetaryFacts = () => {
         .table-heading {
           font-size: 20px;
           margin-bottom: 20px;
+          font-weight: bold;
           color: #1f2937;
         }
 
         .table-wrapper {
-          overflow-x: auto;
+         border-radius: 18px;
+          overflow: hidden; /* clips white corners */
+          box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+          background: white;
         }
 
         .planet-table {
           width: 100%;
-          border-collapse: collapse;
+          border-collapse: separate;
+          border-spacing: 0;
           background: white;
         }
 
