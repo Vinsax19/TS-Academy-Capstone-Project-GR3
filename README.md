@@ -23,7 +23,7 @@ This project recreates the provided mockup while implementing dynamic data fetch
 | Member 2 | [https://github.com/ifyyoyo] |
 | Member 3 | https://github.com/ogheneroprince |
 | Member 4 | https://github.com/Vinsax19|
-| Member 5 | [GitHub Link] |
+| Member 5 | https://github.com/thompsonkpila |
 | Member 6 | [GitHub Link] |
 
 ---
