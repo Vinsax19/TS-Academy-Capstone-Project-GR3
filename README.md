@@ -86,7 +86,7 @@ src/
 ├── App.jsx
 ├── main.jsx
 └── index.css
-
+```
 
 
 
@@ -207,7 +207,6 @@ npm run dev
 The application is deployed using:
 
 - Netlify
-- Vercel
 
 ---
 
