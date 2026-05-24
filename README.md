@@ -66,7 +66,7 @@ The application displays information about planets retrieved from an external AP
 - CSS
 - Fetch API
 - GitHub
-- Netlify / Vercel
+- Netlify
 
 ---
 
