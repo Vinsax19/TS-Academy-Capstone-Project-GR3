@@ -43,12 +43,12 @@ body {
   margin-bottom: 20px;
 }
 
-/* 2. Middle Tier: Tablet view (Screens 1024px and smaller) */
-@media (max-width: 1024px) {
+/* 2. Middle Tier: Tablet view (Screens between 701px and 1024px) */
+@media (min-width: 701px) and (max-width: 1024px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr); /* Drops nicely to 2 columns on tablets */
-  
-}
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* Explicitly forces 3 columns for tablet */
+    gap: 16px;
+  }
 }
 
 /* 3. Lower Tier: Mobile view (Screens 700px and smaller) */
@@ -58,7 +58,7 @@ body {
   }
 
   .grid {
-    grid-template-columns: 1fr; /* Locks into 1 columns on phones */
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* Strictly locks 2 columns on mobile */
     gap: 12px;
   }
 
