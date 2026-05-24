@@ -36,7 +36,7 @@ body {
 }
 
 /* 1. Default Desktop View (Large Screens) */
-.grid {
+.planet1-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr)); 
   gap: 20px;
@@ -45,7 +45,7 @@ body {
 
 /* 2. Middle Tier: Tablet view (Screens between 701px and 1024px) */
 @media (min-width: 701px) and (max-width: 1024px) {
-  .grid {
+  .planet1-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr)); /* Explicitly forces 3 columns for tablet */
     gap: 16px;
   }
@@ -57,7 +57,7 @@ body {
     text-align: center;
   }
 
-  .grid {
+  .planet1-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr)); /* Strictly locks 2 columns on mobile */
     gap: 12px;
   }

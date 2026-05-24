@@ -86,7 +86,7 @@ export default function PlanetGrid() {
       {error && <div style={{ color: 'red', textAlign: 'center' }}>Error: {error}</div>}
 
       {!loading && !error && (
-        <div className="grid">
+        <div className="planet1-grid">
           {planets.map((planet, idx) => (
             <figure key={planet.name || idx} style={styles.card}>
               <img 
@@ -127,10 +127,10 @@ const styles = {
     margin: "0 auto 40px",
     lineHeight: 1.7,
   },
-  grid: {
+  planetGrid: {
     display: "grid",
     gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
-    gap: 15, 
+    gap: 15,
   },
   card: {
     background: "#fff",
