@@ -91,9 +91,9 @@ src/
 
 The application fetches planet data from the provided API and displays:
 
-- Planet Name
-- Distance from the Sun
-- Planet Image
+* Planet Name
+* Distance from the Sun
+* Planet Image
 
 📱 Responsive Design
 The project is fully responsive and optimized for:
